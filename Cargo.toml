@@ -1,0 +1,29 @@
+[package]
+name = "venus-core"
+version = "0.1.0"
+edition = "2021"
+authors = ["charon.odessa@proton.me"]
+license = "Apache-2.0"
+
+[dependencies]
+# Coeur de l'asynchronisme
+tokio = { version = "1", features = ["full"] }
+async-trait = "0.1"
+
+# Web & API
+axum = "0.7"
+tower-http = { version = "0.5", features = ["cors"] }
+
+# Requêtes HTTP (le moteur de scan)
+reqwest = { version = "0.12", default-features = false, features = ["json", "cookies", "rustls-tls"] }
+
+# Sérialisation (JSON)
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Utilitaires
+anyhow = "1.0"
+regex = "1"
+dotenvy = "0.15"
+tracing = "0.1"
+tracing-subscriber = "0.3"
